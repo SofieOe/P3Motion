@@ -159,11 +159,37 @@ namespace Mediapipe.Unity.Sample.PoseLandmarkDetection
       }
     }
 
-    private void OnPoseLandmarkDetectionOutput(PoseLandmarkerResult result, Image image, long timestamp)
+   
+private int _debugFrameCount = 0;
+
+private void OnPoseLandmarkDetectionOutput(
+    PoseLandmarkerResult result,
+    Image image,
+    long timestamp)
+{
+    // Print coordinates approximately once per 30 frames
+    _debugFrameCount++;
+
+    if (_debugFrameCount % 30 == 0 &&
+        result.poseLandmarks != null &&
+        result.poseLandmarks.Count > 0)
     {
-      _poseLandmarkerResultAnnotationController.DrawLater(result);
-      DisposeAllMasks(result);
+        var landmarks = result.poseLandmarks[0].landmarks;
+
+        // MediaPipe Pose: 23 = left hip, 24 = right hip
+        var leftHip = landmarks[16];
+        var rightHip = landmarks[15];
+
+        Debug.Log(
+            $"Left hip: x={leftHip.x:F3}, y={leftHip.y:F3} | " +
+            $"Right hip: x={rightHip.x:F3}, y={rightHip.y:F3}"
+        );
     }
+
+    _poseLandmarkerResultAnnotationController.DrawLater(result);
+    DisposeAllMasks(result);
+}
+
 
     private void DisposeAllMasks(PoseLandmarkerResult result)
     {
