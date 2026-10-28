@@ -19,6 +19,15 @@ namespace Mediapipe.Unity.Sample.PoseLandmarkDetection
 
     public readonly PoseLandmarkDetectionConfig config = new PoseLandmarkDetectionConfig();
 
+      public static PoseLandmarkerRunner Instance {get; private set; }
+      public System.Action<PoseLandmarkerResult> OnResult;
+
+      private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+
     public override void Stop()
     {
       base.Stop();
@@ -162,10 +171,7 @@ namespace Mediapipe.Unity.Sample.PoseLandmarkDetection
    
 private int _debugFrameCount = 0;
 
-private void OnPoseLandmarkDetectionOutput(
-    PoseLandmarkerResult result,
-    Image image,
-    long timestamp)
+private void OnPoseLandmarkDetectionOutput(PoseLandmarkerResult result, Image image, long timestamp)
 {
     // Print coordinates approximately once per 30 frames
     _debugFrameCount++;
@@ -187,6 +193,7 @@ private void OnPoseLandmarkDetectionOutput(
     }
 
     _poseLandmarkerResultAnnotationController.DrawLater(result);
+    OnResult?.Invoke(result); //broadcast to other scripts
     DisposeAllMasks(result);
 }
 
