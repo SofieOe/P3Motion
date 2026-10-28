@@ -186,10 +186,10 @@ private void OnPoseLandmarkDetectionOutput(PoseLandmarkerResult result, Image im
         var leftHip = landmarks[16];
         var rightHip = landmarks[15];
 
-        Debug.Log(
-            $"Left hip: x={leftHip.x:F3}, y={leftHip.y:F3} | " +
-            $"Right hip: x={rightHip.x:F3}, y={rightHip.y:F3}"
-        );
+       // Debug.Log(
+         //   $"Left hip: x={leftHip.x:F3}, y={leftHip.y:F3} | " +
+           // $"Right hip: x={rightHip.x:F3}, y={rightHip.y:F3}"
+        //);
     }
 
     _poseLandmarkerResultAnnotationController.DrawLater(result);
