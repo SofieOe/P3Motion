@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class HandTrigger : MonoBehaviour
 {
- private void OnTriggerEnter(Collider collider)
+  public RandomSpawn randomSpawn;
+ public void OnCollisionEnter(Collision collision)
   {
-    if (collider.gameObject.CompareTag("Hand"))
-    Debug.Log("Hand is here");
+    if (collision.gameObject.CompareTag("Hand"))
+      {
+        Debug.Log("Hand is here");
+        if (randomSpawn.tempTimer == 5f)
+            {
+                randomSpawn.Change();
+            }
+      }
     else return;
   }
-  private void OnTriggerExit(Collider collider)
+  public void OnCollisionExit(Collision collision)
     {
-        if (collider.gameObject.CompareTag("Hand"))
+        if (collision.gameObject.CompareTag("Hand"))
         return;
         Debug.Log("Hand is gone");
     }
