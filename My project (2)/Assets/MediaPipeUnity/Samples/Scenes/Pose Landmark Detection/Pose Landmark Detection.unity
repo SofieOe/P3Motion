@@ -1510,8 +1510,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 84f77cdc2611b432fb4128ed7bfc8465, type: 3}
   - {fileID: 21300000, guid: a80ef5a00c07440509d0e180ec6d5d30, type: 3}
   - {fileID: 21300000, guid: 435be2c048014465bbc118cda1b0a1ec, type: 3}
-  timer: 10
-  tempTimer: 0
 --- !u!212 &487988988
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2420,6 +2418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 719073321}
+  - component: {fileID: 719073322}
   m_Layer: 5
   m_Name: DoorSymbol2
   m_TagString: Untagged
@@ -2451,6 +2450,24 @@ RectTransform:
   m_AnchoredPosition: {x: 785, y: 315}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &719073322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719073320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5322d5d5759ff46bd8adf894620fbd97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite_Pic:
+  - {fileID: 21300000, guid: 4d1ee06741c48410bb66617f4bc6af34, type: 3}
+  - {fileID: 21300000, guid: 4068fc16bd23244b69bd3551485fa59e, type: 3}
+  - {fileID: 21300000, guid: a80ef5a00c07440509d0e180ec6d5d30, type: 3}
+  - {fileID: 21300000, guid: 84f77cdc2611b432fb4128ed7bfc8465, type: 3}
+  - {fileID: 21300000, guid: 435be2c048014465bbc118cda1b0a1ec, type: 3}
 --- !u!1 &731184779
 GameObject:
   m_ObjectHideFlags: 0
@@ -3021,7 +3038,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &794787776
 MonoBehaviour:
@@ -3036,6 +3053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomSpawn: {fileID: 487988987}
+  tempTimer: 0
 --- !u!65 &794787777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3829,6 +3847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomSpawn: {fileID: 487988987}
+  tempTimer: 0
 --- !u!54 &1076206093
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3854,7 +3873,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1076788331
 GameObject:
