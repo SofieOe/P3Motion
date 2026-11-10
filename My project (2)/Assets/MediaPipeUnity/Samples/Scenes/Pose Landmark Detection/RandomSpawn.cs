@@ -19,6 +19,9 @@ public class RandomSpawn : MonoBehaviour
         rand = Random.Range(0, Sprite_Pic.Length);
         Debug.Log("Rand");
         GetComponent<SpriteRenderer>().sprite = Sprite_Pic[rand];
+        var parent = gameObject.transform as RectTransform;
+        var sprite = GetComponent<SpriteRenderer>().sprite;
+        parent.localScale = parent.rect.size / sprite.rect.size * sprite.pixelsPerUnit;
         Debug.Log("getcompRand");
     }
 }
