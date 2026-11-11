@@ -2008,22 +2008,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5322d5d5759ff46bd8adf894620fbd97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObjectPicture:
-  - {fileID: 627207113}
-  - {fileID: 788468012}
-  - {fileID: 487988985}
-  - {fileID: 719073320}
+  gameObjectBook:
   - {fileID: 34939494}
   - {fileID: 682918245}
   - {fileID: 1715093599}
   - {fileID: 957164120}
   - {fileID: 319896106}
   - {fileID: 235533054}
+  gameObjectPlants:
   - {fileID: 1378972665}
   - {fileID: 793106558}
-  - {fileID: 1049398128}
+  gameObjectPicture:
   - {fileID: 605654151}
   - {fileID: 303851606}
+  gameObjectRest:
+  - {fileID: 627207113}
+  - {fileID: 788468012}
+  - {fileID: 487988985}
+  - {fileID: 719073320}
+  - {fileID: 1049398128}
 --- !u!4 &547628976
 Transform:
   m_ObjectHideFlags: 0
@@ -3492,7 +3495,7 @@ GameObject:
   - component: {fileID: 794787775}
   m_Layer: 0
   m_Name: TriggerZoneLeft
-  m_TagString: Untagged
+  m_TagString: LeftDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4358,7 +4361,7 @@ GameObject:
   - component: {fileID: 1076206093}
   m_Layer: 0
   m_Name: TriggerZoneRight
-  m_TagString: Untagged
+  m_TagString: RightDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

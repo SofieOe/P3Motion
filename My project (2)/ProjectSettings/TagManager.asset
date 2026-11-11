@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Global Resource
   - Hand
+  - LeftDoor
+  - RightDoor
   layers:
   - Default
   - TransparentFX

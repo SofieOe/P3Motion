@@ -3,7 +3,7 @@ using UnityEngine;
 public class HandTrigger : MonoBehaviour
 {
   public RandomSpawn randomSpawn;
-    private float timer =10f;
+    private float timer =5f;
     private bool isTouched = false;
     public float tempTimer;
 
@@ -29,6 +29,8 @@ public class HandTrigger : MonoBehaviour
        
         Debug.Log("if randomspawner temptimer hand trigger");
         randomSpawn.Change();
+        
+        
         Debug.Log("HandTRigger randomspawn change");
         Debug.Log("If temptimer return randomspawn");
         isTouched = false;
