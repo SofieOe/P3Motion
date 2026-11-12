@@ -36,8 +36,11 @@ public class RandomSpawn : MonoBehaviour
         Debug.Log("restspawn");
         PlantSpawn();
         Debug.Log("plantspawn");
+
         
     }
+
+    
 
 
     public void BookSpawn()

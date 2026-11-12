@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
+
 
 public class HandTrigger : MonoBehaviour
 {
@@ -10,35 +13,35 @@ public class HandTrigger : MonoBehaviour
     void Start()
     {
         tempTimer = timer;
-        Debug.Log("Temptimer=timer randomspawn");
-        Debug.Log("Start Change ting");
     }
 
     // Update is called once per frame
     void Update()
     {
         if (!isTouched) return;
-        Debug.Log("if !istouched randomspawner");
+
         if (isTouched)
         {
             tempTimer -= Time.deltaTime;
-            Debug.Log("respawn timer" + tempTimer);
+            Debug.Log("Det her er tiden "+tempTimer);
         }
 
         if (!(tempTimer <= 0)) return;
-       
-        Debug.Log("if randomspawner temptimer hand trigger");
+      
         randomSpawn.Change();
         
-        
-        Debug.Log("HandTRigger randomspawn change");
-        Debug.Log("If temptimer return randomspawn");
         isTouched = false;
         tempTimer = timer;
+        StartCoroutine(WaitForSeconds(5f));
+        Debug.Log("vi venter");
 
-        Debug.Log("this time" + tempTimer);
-        Debug.Log(isTouched);
+    }
 
+    public IEnumerator WaitForSeconds(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Debug.Log("inde i enumerator");
+        Debug.Log("her er delay " + delay);
     }
  public void OnCollisionEnter(Collision collision)
   {
