@@ -6,6 +6,7 @@ using System.Collections;
 public class HandTrigger : MonoBehaviour
 {
   public RandomSpawn randomSpawn;
+  public Constraints constraints;
     private float timer =5f;
     private bool isTouched = false;
     public float tempTimer;
@@ -29,11 +30,11 @@ public class HandTrigger : MonoBehaviour
         if (!(tempTimer <= 0)) return;
       
         randomSpawn.Change();
-        
         isTouched = false;
         tempTimer = timer;
         StartCoroutine(WaitForSeconds(5f));
         Debug.Log("vi venter");
+
 
     }
 

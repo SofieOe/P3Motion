@@ -5,11 +5,14 @@ using System.Collections;
 public class RandomSpawn : MonoBehaviour
 {
     private int rand;
+    public Constraints constraints;
     private int spawnChance;
     public GameObject[] gameObjectBook;
     public GameObject[] gameObjectPlants;
     public GameObject[] gameObjectPicture;
     public GameObject[] gameObjectRest;
+
+    public int ActiveBook = 0;
 
     void Start()
     {
@@ -37,7 +40,9 @@ public class RandomSpawn : MonoBehaviour
         PlantSpawn();
         Debug.Log("plantspawn");
 
-        
+        constraints.Count();
+        constraints.Rules();
+        ActiveBook = 0;
     }
 
     
@@ -78,11 +83,13 @@ public class RandomSpawn : MonoBehaviour
                 Debug.Log(rand+"child " + gameObjectBook[i].transform.childCount);
                 rand = Random.Range(0, gameObjectBook[i].transform.childCount-1); 
                 gameObjectBook[i].transform.GetChild(rand).gameObject.SetActive(true);
+                ActiveBook++;
             } 
             else if (i < 3)
             {
                 rand = Random.Range(0, gameObjectBook[i].transform.childCount-1); 
                 gameObjectBook[i].transform.GetChild(rand).gameObject.SetActive(true);
+                ActiveBook++;
             }
         }
 

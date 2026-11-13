@@ -8,6 +8,26 @@ TagManager:
   - Hand
   - LeftDoor
   - RightDoor
+  - DoorBlue
+  - DoorRed
+  - DoorBrown
+  - Circle
+  - Square
+  - Star
+  - Hearth
+  - Triangle
+  - GreenBook
+  - LightBlueBook
+  - OrangeBook
+  - PinkBook
+  - YellowBook
+  - PurpleBook
+  - FlowerPlant
+  - Plant
+  - YellowLamp
+  - BlueLamp
+  - OffLamp
+  - Painting
   layers:
   - Default
   - TransparentFX
