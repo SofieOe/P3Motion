@@ -33,7 +33,7 @@ public class HandTrigger : MonoBehaviour
         isTouched = false;
         tempTimer = timer;
         StartCoroutine(WaitForSeconds(5f));
-        Debug.Log("vi venter");
+        //Debug.Log("vi venter");
 
 
     }
@@ -41,19 +41,19 @@ public class HandTrigger : MonoBehaviour
     public IEnumerator WaitForSeconds(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Debug.Log("inde i enumerator");
-        Debug.Log("her er delay " + delay);
+        //Debug.Log("inde i enumerator");
+        //Debug.Log("her er delay " + delay);
     }
  public void OnCollisionEnter(Collision collision)
   {
     if (collision.gameObject.CompareTag("Hand")) 
       {
         isTouched = true;
-        Debug.Log("Hand is here");
+        //Debug.Log("Hand is here");
       }
     else return;
-    Debug.Log("else return hand trigger");
-    Debug.Log(collision.gameObject.tag);
+    //Debug.Log("else return hand trigger");
+    //Debug.Log(collision.gameObject.tag);
   }
   public void OnCollisionExit(Collision collision)
     {
@@ -61,6 +61,6 @@ public class HandTrigger : MonoBehaviour
         {
           isTouched = false;
         }
-        Debug.Log("Hand is gone");
+        //Debug.Log("Hand is gone");
     }
 }

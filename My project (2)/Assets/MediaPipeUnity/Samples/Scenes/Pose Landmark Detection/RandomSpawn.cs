@@ -32,13 +32,13 @@ public class RandomSpawn : MonoBehaviour
         Debug.Log("getcompRand");*/
 
         BookSpawn();
-        Debug.Log("bookspawn");
+        //Debug.Log("bookspawn");
         PictureSpawn();
-        Debug.Log("Pucturespawn");
+        //Debug.Log("Pucturespawn");
         RestSpawn();
-        Debug.Log("restspawn");
+        //Debug.Log("restspawn");
         PlantSpawn();
-        Debug.Log("plantspawn");
+        //Debug.Log("plantspawn");
 
         constraints.Count();
         constraints.Rules();
@@ -76,11 +76,11 @@ public class RandomSpawn : MonoBehaviour
             }
             spawnChance = Random.Range(1, 100);
             
-            Debug.Log("spawnchange er "+ spawnChance);
+           // Debug.Log("spawnchange er "+ spawnChance);
             if (i >= 3 && spawnChance <= 75)
             {
 
-                Debug.Log(rand+"child " + gameObjectBook[i].transform.childCount);
+                //Debug.Log(rand+"child " + gameObjectBook[i].transform.childCount);
                 rand = Random.Range(0, gameObjectBook[i].transform.childCount-1); 
                 gameObjectBook[i].transform.GetChild(rand).gameObject.SetActive(true);
                 ActiveBook++;
@@ -103,7 +103,7 @@ public class RandomSpawn : MonoBehaviour
                 picture.transform.GetChild(i).gameObject.SetActive(false);
             }
 
-            rand = Random.Range(0, (picture.transform.childCount-1)*2);
+            rand = Random.Range(0, picture.transform.childCount+2);
 
             if (rand <= picture.transform.childCount-1)
             {
