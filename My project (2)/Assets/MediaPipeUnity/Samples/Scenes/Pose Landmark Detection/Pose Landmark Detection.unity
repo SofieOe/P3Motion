@@ -3689,6 +3689,7 @@ MonoBehaviour:
   constraints: {fileID: 1944677476}
   tempTimer: 0
   loadingImage: {fileID: 1104474595}
+  LoadingZone: {fileID: 1076206089}
 --- !u!65 &794787777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4566,6 +4567,7 @@ MonoBehaviour:
   constraints: {fileID: 1944677476}
   tempTimer: 0
   loadingImage: {fileID: 5532688}
+  LoadingZone: {fileID: 794787774}
 --- !u!54 &1076206093
 Rigidbody:
   m_ObjectHideFlags: 0

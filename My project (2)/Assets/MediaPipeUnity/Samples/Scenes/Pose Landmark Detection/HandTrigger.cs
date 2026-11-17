@@ -12,6 +12,7 @@ public class HandTrigger : MonoBehaviour
     public float tempTimer;
 
     public GameObject loadingImage;
+    public GameObject LoadingZone;
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class HandTrigger : MonoBehaviour
         isTouched = false;
 
         loadingImage.SetActive(false); //her starter vi med at gøre vores loading image false
+        
         tempTimer = timer;
         StartCoroutine(WaitForSeconds(5f));
         //Debug.Log("vi venter");
@@ -56,6 +58,11 @@ public class HandTrigger : MonoBehaviour
       {
         isTouched = true;
         loadingImage.SetActive(true); //når vi interegere så bliver loading enabled
+        if(collision.gameObject != LoadingZone)
+        {
+          LoadingZone.SetActive(false);
+        }
+
 
         //Debug.Log("Hand is here");
       }
@@ -69,6 +76,11 @@ public class HandTrigger : MonoBehaviour
         {
           isTouched = false;
           loadingImage.SetActive(false);
+          if(collision.gameObject != LoadingZone)
+          {
+            LoadingZone.SetActive(true);
+          }
+          
         }
         //Debug.Log("Hand is gone");
     }
