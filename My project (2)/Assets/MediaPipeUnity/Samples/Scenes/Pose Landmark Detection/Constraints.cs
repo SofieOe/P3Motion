@@ -172,11 +172,11 @@ public class Constraints : MonoBehaviour
             {
                 Debug.Log("Vælg højre dør, 1 firkant");
             }
-            else if (DoorBlue.Length == 1 && Circle.Length == 1 || Heart.Length == 1)
+            else if (DoorBlue.Length == 1 && (Circle.Length == 1 || Heart.Length == 1))
             {
                 Debug.Log("Vælg venstre dør, 1 blå dør + 1 cirkel ELLER 1 hjerte");
             }
-            else if (DoorBlue.Length == 2 || DoorRed.Length == 2 || DoorBrown.Length == 2 && Triangle.Length == 2 || Square.Length == 2)
+            else if ((DoorBlue.Length == 2 || DoorRed.Length == 2 || DoorBrown.Length == 2) && (Triangle.Length == 2 || Square.Length == 2))
             {
                 Debug.Log("Vælg højre dør, 2 blå dør ELLER 2 rød dør ELLER 2 brun dør OG 2 trekant ELLER 2 firkanter");
             }
