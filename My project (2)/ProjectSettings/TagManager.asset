@@ -28,6 +28,7 @@ TagManager:
   - BlueLamp
   - OffLamp
   - Painting
+  - Hand1
   layers:
   - Default
   - TransparentFX
