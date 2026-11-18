@@ -5,6 +5,8 @@ using System.Collections;
 public class Constraints : MonoBehaviour
 {
         public bool Sandt = false;
+        public bool LeftTrue ;
+        public bool RightTrue ;
         public RandomSpawn randomSpawn;
         public GameObject[] DoorBlue;
         public GameObject[] DoorRed;
@@ -26,6 +28,7 @@ public class Constraints : MonoBehaviour
         public GameObject[] BlueLamp;
         public GameObject[] OffLamp;
         public GameObject[] Painting;
+
 
     
     public void Count()
@@ -64,11 +67,15 @@ public class Constraints : MonoBehaviour
             if (YellowBook.Length == 1 && LightBlueBook.Length == 1)
             {
                 Sandt = true;
+                LeftTrue = true;
+                
                 Debug.Log("Vælg venstre dør, 3 bøger, Gulbog+Blåbog");
             }
             else if (GreenBook.Length == 2 && BlueLamp.Length == 1)
             {
                 Sandt = true;
+                RightTrue = true;
+                
                 Debug.Log("Vælg højre dør, 3 bøger, grønbog+blålampe");
             }
         }
@@ -80,16 +87,19 @@ public class Constraints : MonoBehaviour
             if (OrangeBook.Length >= 2)
             {
                 Sandt = true;
+                LeftTrue = true;
                 Debug.Log("Vælg venstre dør 4 bøger, min 2 orange");
             }
             else if (PinkBook.Length >= 1 && FlowerPlant.Length == 1)
             {
                 Sandt = true;
+                RightTrue = true;
                 Debug.Log("Vælg højre dør, 4 bøger, minimum pinkbog + blomst");
             }
             else if (PurpleBook.Length == 1 && LightBlueBook.Length == 1 && YellowBook.Length == 1 && GreenBook.Length == 1)
             {
                 Sandt = true;
+                LeftTrue = true;
                 Debug.Log("Vælg venstre dør, 4 bøger, lilla+blå+gul+grønbog");
             }
         }
@@ -101,21 +111,25 @@ public class Constraints : MonoBehaviour
             if (Painting.Length == 2)
             {
                 Sandt = true;
+                RightTrue = true;
                 Debug.Log("Vælg højre dør 2 aktive billeder");
             }
             else if (PinkBook.Length == 2 && PurpleBook.Length == 1)
             {
                 Sandt = true;
+                LeftTrue = true;
                 Debug.Log("Vælg venstre dør 5 bøger, 2 pinke + 1 lillabog");
             }
             else if (GreenBook.Length == 1 && LightBlueBook.Length == 1 && PurpleBook.Length == 1 && OrangeBook.Length == 1)
             {
                 Sandt = true;
+                RightTrue = true;
                 Debug.Log("Vælg højre dør, 5 bøger, 1 grøn, 1 blå, 1 lilla, 1 orange");
             }
             else if (PinkBook.Length >= 2)
             {
                 Sandt = true;
+                LeftTrue = true;
                 Debug.Log("Vælg venstre dør, minimum 2 pinke bøger");
             }
         }
@@ -127,26 +141,31 @@ public class Constraints : MonoBehaviour
             if (PurpleBook.Length == 2 && YellowBook.Length == 1)
             {
                 Sandt = true;
+                LeftTrue = true;
                 Debug.Log("Vælg venstre dør, 6 bøger, 2 lilla + 1 gul");
             }
             else if (YellowBook.Length == 2 && PurpleBook.Length == 1)
             {
                 Sandt = true;
+                RightTrue = true;
                 Debug.Log("Vælg højre dør, 6 bøger, 1 gul + 2 lilla");
             }
             else if (LightBlueBook.Length == 3)
             {
                 Sandt = true;
+                LeftTrue = true;
                 Debug.Log("Vælg venstre dør, 6 bøger, 3 blå");
             }
             else if (YellowBook.Length == 2 && LightBlueBook.Length == 2)
             {
                 Sandt = true;
+                RightTrue = true;
                 Debug.Log("Vælg højre dør, 6 bøger, 2 gule + 2 blå");
             }
             else if (PinkBook.Length == 3)
             {
                 Sandt = true;
+                LeftTrue = true;
                 Debug.Log("Vælg venstre dør, 6 bøger, 3 pink");
             }
         }
@@ -158,57 +177,73 @@ public class Constraints : MonoBehaviour
             Debug.Log("VI KLAREDE DEN");
             if (DoorBrown.Length == 1 && Triangle.Length == 1)
             {
+                RightTrue = true;
                 Debug.Log("Vælg højre dør, 1 brun dør + 1 trekant");
             }
             else if (DoorRed.Length == 1 && Star.Length == 1)
             {
+                LeftTrue = true;
                 Debug.Log("Vælg venstre dør, 1 rød dør + 1 stjerne");
             }
             else if (DoorRed.Length == 2 && Square.Length == 1)
             {
+                LeftTrue = true;
                 Debug.Log("Vælg venstre dør, 2 røde dør + 1 firkant");
             }
             else if (Square.Length == 1)
             {
+                RightTrue = true;
                 Debug.Log("Vælg højre dør, 1 firkant");
             }
             else if (DoorBlue.Length == 1 && (Circle.Length == 1 || Heart.Length == 1))
             {
+                LeftTrue = true;
                 Debug.Log("Vælg venstre dør, 1 blå dør + 1 cirkel ELLER 1 hjerte");
             }
             else if ((DoorBlue.Length == 2 || DoorRed.Length == 2 || DoorBrown.Length == 2) && (Triangle.Length == 2 || Square.Length == 2))
             {
+                RightTrue = true;
                 Debug.Log("Vælg højre dør, 2 blå dør ELLER 2 rød dør ELLER 2 brun dør OG 2 trekant ELLER 2 firkanter");
             }
 
             //Plante + billede + lampe
             else if (Painting.Length == 2 && YellowLamp.Length == 1)
             {
+                RightTrue = true;
                 Debug.Log("Vælg højre dør, 2 billeder + 1 gul lampe");
             }
             else if (Plant.Length == 1 && BlueLamp.Length == 1)
             {
+                LeftTrue = true;
                 Debug.Log("Vælg venstre dør, 1 plante, 1 blå lampe");
             }
             else if (OffLamp.Length == 1 && Painting.Length >= 1)
             {
+                RightTrue = true;
                 Debug.Log("Vælg højre dør, lampe ikke tændt + minimum 1 billede");
             }
             else if (FlowerPlant.Length == 1 && Plant.Length == 1)
             {
+                RightTrue = true;
                 Debug.Log("Vælg højre dør, 1 blomsterplante + plante");
             }
             else if (FlowerPlant.Length == 2 || Plant.Length == 2)
             {
+                LeftTrue = true;
                 Debug.Log("Vælg venstre dør, 2 blomsterplante ELLER 2 planter");
             }
 
             //Intet passer gør det her :D
             else 
             {
+                LeftTrue = true;
                 Debug.Log("Intet passer... Vælg venstre dør :D");
             }
         }
+        
         Sandt = false;
+        LeftTrue = false;
+        RightTrue = false;
+        
     }
 }

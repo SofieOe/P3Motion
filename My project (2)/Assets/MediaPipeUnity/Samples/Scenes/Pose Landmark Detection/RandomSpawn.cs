@@ -13,6 +13,7 @@ public class RandomSpawn : MonoBehaviour
     public GameObject[] gameObjectRest;
 
     public int ActiveBook = 0;
+    public bool functionCalled = false;
 
     void Start()
     {
@@ -43,6 +44,7 @@ public class RandomSpawn : MonoBehaviour
         constraints.Count();
         constraints.Rules();
         ActiveBook = 0;
+        functionCalled = true;
     }
 
     

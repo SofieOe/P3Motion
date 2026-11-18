@@ -1,18 +1,22 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using System.Drawing;
 
 
 public class HandTrigger : MonoBehaviour
 {
   public RandomSpawn randomSpawn;
+  public PointsRightorWrong pointScript;
   public Constraints constraints;
     private float timer =5f;
-    private bool isTouched = false;
+    public bool isTouched = false;
     public float tempTimer;
 
     public GameObject loadingImage;
     public GameObject LoadingZone;
+
+    
 
     void Start()
     {
@@ -32,15 +36,22 @@ public class HandTrigger : MonoBehaviour
             Debug.Log("Det her er tiden "+tempTimer);
         }
 
+
         if (!(tempTimer <= 0)) return;
-      
+        
+       
+        Debug.Log("point script i hand trigger blir kaldt");
         randomSpawn.Change();
+        pointScript.PointMath();
         isTouched = false;
 
-        loadingImage.SetActive(false); //her starter vi med at gøre vores loading image false
+        loadingImage.SetActive(false); 
         
         tempTimer = timer;
+        
+        
         StartCoroutine(WaitForSeconds(5f));
+         
         //Debug.Log("vi venter");
 
 
@@ -49,6 +60,7 @@ public class HandTrigger : MonoBehaviour
     public IEnumerator WaitForSeconds(float delay)
     {
         yield return new WaitForSeconds(delay);
+        
         //Debug.Log("inde i enumerator");
         //Debug.Log("her er delay " + delay);
     }
@@ -61,6 +73,8 @@ public class HandTrigger : MonoBehaviour
         if(collision.gameObject != LoadingZone)
         {
           LoadingZone.SetActive(false);
+          
+         
         }
 
 
@@ -79,9 +93,33 @@ public class HandTrigger : MonoBehaviour
           if(collision.gameObject != LoadingZone)
           {
             LoadingZone.SetActive(true);
+            
           }
+
+          
+          
+          
           
         }
+        
         //Debug.Log("Hand is gone");
     }
+
+    /*private void pointCounter()
+    {
+      if (CompareTag("LeftDoor"))
+      {
+        pointScript.WrongPoint ++;
+        pointScript.RightPoint ++;
+      }
+      if (CompareTag("RightDoor"))
+      {
+        pointScript.WrongPoint ++;
+        pointScript.RightPoint ++;
+      }
+      Debug.Log("det her er point forkert " + pointScript.WrongPoint);
+      Debug.Log("det her er point rigtigt " + pointScript.RightPoint);
+    }*/
+
+
 }
