@@ -2173,6 +2173,7 @@ MonoBehaviour:
   - {fileID: 719073320}
   - {fileID: 1049398128}
   ActiveBook: 0
+  functionCalled: 0
 --- !u!4 &547628976
 Transform:
   m_ObjectHideFlags: 0
@@ -3688,6 +3689,7 @@ MonoBehaviour:
   randomSpawn: {fileID: 547628975}
   pointScript: {fileID: 856116133}
   constraints: {fileID: 1944677476}
+  isTouched: 0
   tempTimer: 0
   loadingImage: {fileID: 1104474595}
   LoadingZone: {fileID: 1076206089}
@@ -3832,6 +3834,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constraintsScript: {fileID: 1944677476}
+  left: {fileID: 794787776}
+  right: {fileID: 1076206092}
   WrongPoint: 0
   RightPoint: 0
 --- !u!4 &856116134
@@ -4614,6 +4618,7 @@ MonoBehaviour:
   randomSpawn: {fileID: 547628975}
   pointScript: {fileID: 856116133}
   constraints: {fileID: 1944677476}
+  isTouched: 0
   tempTimer: 0
   loadingImage: {fileID: 5532688}
   LoadingZone: {fileID: 794787774}
