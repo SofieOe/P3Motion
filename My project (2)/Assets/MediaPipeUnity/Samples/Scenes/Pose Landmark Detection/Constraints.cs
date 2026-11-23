@@ -58,6 +58,12 @@ public class Constraints : MonoBehaviour
 
     public void Rules()
     {
+        Sandt = false;
+        LeftTrue = false;
+        RightTrue = false;
+
+
+
         Debug.Log("Bøger "+ randomSpawn.ActiveBook);
         Debug.Log("Sandt lololol "+Sandt);
         //3 book
@@ -240,10 +246,6 @@ public class Constraints : MonoBehaviour
                 Debug.Log("Intet passer... Vælg venstre dør :D");
             }
         }
-        
-        Sandt = false;
-        LeftTrue = false;
-        RightTrue = false;
         
     }
 }

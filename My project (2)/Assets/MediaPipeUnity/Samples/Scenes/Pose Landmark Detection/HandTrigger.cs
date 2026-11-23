@@ -41,8 +41,11 @@ public class HandTrigger : MonoBehaviour
         
        
         Debug.Log("point script i hand trigger blir kaldt");
-        randomSpawn.Change();
+        Debug.Log("pointScript is: " + (pointScript == null ? "NULL" : pointScript.name), this);
         pointScript.PointMath();
+        Debug.Log("PointMath returned without error", this);
+        randomSpawn.Change();
+        
         isTouched = false;
 
         loadingImage.SetActive(false); 

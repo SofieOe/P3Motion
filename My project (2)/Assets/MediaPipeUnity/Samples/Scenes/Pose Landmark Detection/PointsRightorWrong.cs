@@ -19,8 +19,10 @@ public class PointsRightorWrong : MonoBehaviour
     // Update is called once per frame
     public void PointMath()
     {
-        /*RightPoint = Math.Clamp(0,0,100);
-        WrongPoint = Math.Clamp(0,0,100);
+        Debug.Log("PointMath START on " + name, this);
+        Debug.Log($"DIAG | LeftTrue: {constraintsScript.LeftTrue} | RightTrue: {constraintsScript.RightTrue} | left.isTouched: {left.isTouched} | right.isTouched: {right.isTouched}");
+        //RightPoint = Math.Clamp(0,0,100);
+        //WrongPoint = Math.Clamp(0,0,100);
 
         if(constraintsScript.RightTrue ==true && right.isTouched == true)
         {
@@ -39,9 +41,9 @@ public class PointsRightorWrong : MonoBehaviour
         }
     
         Debug.Log("her er point wrong "+ WrongPoint);
-        Debug.Log("her er point right "+ RightPoint);*/
+        Debug.Log("her er point right "+ RightPoint);
 
-        switch (constraintsScript.LeftTrue)
+        /*switch (constraintsScript.LeftTrue)
         {
             
             case true:
@@ -81,10 +83,10 @@ public class PointsRightorWrong : MonoBehaviour
         }
 
         Debug.Log("her er point wrong "+ WrongPoint);
-        Debug.Log("her er point right "+ RightPoint);
+        Debug.Log("her er point right "+ RightPoint);*/
         
     }
-
+    
 
 
 
