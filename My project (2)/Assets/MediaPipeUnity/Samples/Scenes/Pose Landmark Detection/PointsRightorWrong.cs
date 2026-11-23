@@ -12,6 +12,8 @@ public class PointsRightorWrong : MonoBehaviour
     public HandTrigger right;
     public GameObject Correct;
     public GameObject Wrong;
+    public GameObject _pauseMenu;
+    private bool _isGamePaused = false;
     public int WrongPoint =0;
     public int RightPoint =0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -76,52 +78,23 @@ public class PointsRightorWrong : MonoBehaviour
         Debug.Log("her er point wrong "+ WrongPoint);
         Debug.Log("her er point right "+ RightPoint);
         
-
-        /*switch (constraintsScript.LeftTrue)
-        {
-            
-            case true:
-                RightPoint ++;
-                Debug.Log("right!!!");
-                
-            break;
-
-            case false:
-
-
-            default:
-                WrongPoint++;
-                Debug.Log("wrong!!!");
-                break;
-           
-        
-            
-            
-        }
-        switch (constraintsScript.RightTrue)
-        {
-            case true:
-                RightPoint ++;
-                Debug.Log("TRUE");
-                
-            break;
-
-            case false:
-
-            default:
-            WrongPoint++;
-            Debug.Log("FALSE");
-            break;
-
-            
-        }
-
-        Debug.Log("her er point wrong "+ WrongPoint);
-        Debug.Log("her er point right "+ RightPoint);*/
         
     }
-    
 
-
+        public void TogglePause()
+        {
+            if (!_isGamePaused)
+            {
+            _isGamePaused = true;
+            _pauseMenu.SetActive(true);
+            Time.timeScale = 0.0f;
+            }
+            else
+            {
+                _isGamePaused = false;
+                _pauseMenu.SetActive(false);
+                Time.timeScale = 1.0f;
+            }
+        }
 
 }

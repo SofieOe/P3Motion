@@ -6,6 +6,7 @@ public class RandomSpawn : MonoBehaviour
 {
     private int rand;
     public Constraints constraints;
+    public PointsRightorWrong PRW;
     private int spawnChance;
     public GameObject[] gameObjectBook;
     public GameObject[] gameObjectPlants;
@@ -45,8 +46,23 @@ public class RandomSpawn : MonoBehaviour
         constraints.Rules();
         ActiveBook = 0;
         functionCalled = true;
+
+
+        if(PRW.RightPoint + PRW.WrongPoint == 5f)
+            {
+                StartCoroutine(WaitForSeconds(3f));
+                
+            }
     }
 
+    public IEnumerator WaitForSeconds(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        PRW.TogglePause();
+        
+        //Debug.Log("inde i enumerator");
+        //Debug.Log("her er delay " + delay);
+    }
     
 
 
