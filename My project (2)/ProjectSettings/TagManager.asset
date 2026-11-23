@@ -29,6 +29,8 @@ TagManager:
   - OffLamp
   - Painting
   - Hand1
+  - Correct
+  - Wrong
   layers:
   - Default
   - TransparentFX
