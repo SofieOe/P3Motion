@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using System.Drawing;
+using TMPro;
 
 public class PointsRightorWrong : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PointsRightorWrong : MonoBehaviour
     private bool _isGamePaused = false;
     public int WrongPoint =0;
     public int RightPoint =0;
+    public TextMeshProUGUI PointText;
+    public TextMeshProUGUI WrongPointText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -88,6 +91,8 @@ public class PointsRightorWrong : MonoBehaviour
             _isGamePaused = true;
             _pauseMenu.SetActive(true);
             Time.timeScale = 0.0f;
+            PointText.text = "This is your right points " + RightPoint;
+            WrongPointText.text = "This is your wrong points " + WrongPoint;
             }
             else
             {
